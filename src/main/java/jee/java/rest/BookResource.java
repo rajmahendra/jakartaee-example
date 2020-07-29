@@ -1,33 +1,36 @@
 package jee.java.rest;
 
-import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
 import jee.java.entity.Book;
 import jee.java.entity.service.Catalog;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("books")
+@Path("book")
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+@Consumes({MediaType.APPLICATION_JSON,MediaType.TEXT_HTML})
+@ApplicationScoped
 public class BookResource {
 
     @Inject
     private Catalog bookCatalog;
 
     @GET
-    public Book getABook() {
-        return bookCatalog.getAllBook(1);
+    public Response getABook() {
+        return Response.ok(bookCatalog.getAllBook(1)).build();
     }
 
     @GET
     @Path("/all")
-    public List<Book> getAllBook() {
-        return bookCatalog.getAllBooks();
+    public Response getAllBook() {
+        return Response.ok(bookCatalog.getAllBooks()).build();
     }
 
 

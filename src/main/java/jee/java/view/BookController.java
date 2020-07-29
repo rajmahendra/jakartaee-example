@@ -1,13 +1,11 @@
 package jee.java.view;
 
-import jakarta.inject.Inject;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
-
+import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 @Path("book")
 @Controller
@@ -20,8 +18,7 @@ public class BookController {
 
     @GET
     @Produces("text/html")
-    public String view1() {
-    //    models.put("book", catalog.getBook(id));
+    public String welcome() {
         return "book.xhtml";
     }
 }
