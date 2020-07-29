@@ -2,11 +2,12 @@
 gradlew.bat
 gradlew
 gradle-app.setting
-!gradle-wrapper.jar
+gradle-wrapper.jar
 .gradletasknamecache
 
 .idea
-
+out
+web
 
 
 /build/
