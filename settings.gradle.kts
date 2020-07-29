@@ -14,9 +14,8 @@ pluginManagement {
  * in the user manual at https://docs.gradle.org/6.5.1/userguide/multi_project_builds.html
  */
 
-rootProject.name = "jakartaee-example"
+rootProject.name = "jakartaeeexample"
 
 
-include("rest","web","common")
 
 
